@@ -1,0 +1,10 @@
+[package]
+name = "adder"
+version = "0.1.0"
+authors = ["张世阳 <zsytssk@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+nom = "5.1.2"
+
+[workspace]
