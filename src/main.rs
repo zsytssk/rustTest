@@ -1,8 +1,11 @@
-const MAX_NUM: u8 = 20;
-fn main() {
-    for n in 1..MAX_NUM {
-        println!("{}", n);
-    }
+use std::rc::Rc;
 
-    MAX_NUM = 1;
+fn main() {
+    let a = Rc::new(vec![1, 2, 3]);
+    let b = Rc::clone(&a);
+    let c = Rc::clone(&a);
+
+    let mut b1 = Rc::try_unwrap(b).unwrap();
+    b1.push(1);
+    println!("{:?}", &a);
 }

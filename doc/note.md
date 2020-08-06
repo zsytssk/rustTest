@@ -1,12 +1,19 @@
+- https://www.youtube.com/watch?v=_4fSLuvPMf8
+
 - https://doc.rust-lang.org/book/ch20-01-single-threaded.html
 
 - https://github.com/NullSense/Linda/tree/5a86c25f7c8dec9ad975c9569ce166e22f7a07ee
+
+## 2020-08-05 09:56:51
+
+- @ques rc arc mutex weak ?
 
 * @ques 为什么 html 内容不展示 是不是要写 content-type ...
 
 * @ques rust life time
 
 * @ques rust const
+  ，
 
 ## 2020-07-27 09:59:36
 
