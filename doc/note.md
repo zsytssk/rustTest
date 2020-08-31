@@ -1,10 +1,26 @@
-- https://www.youtube.com/watch?v=_4fSLuvPMf8
-
-- https://doc.rust-lang.org/book/ch20-01-single-threaded.html
+- https://gist.github.com/wegry/d1bbb515fe754d80feb68de29df37551#file-server-rs-L42
 
 - https://github.com/NullSense/Linda/tree/5a86c25f7c8dec9ad975c9569ce166e22f7a07ee
 
+## 2020-08-26 09:36:02
+
+- async local file server
+
+  - 文件夹路径
+  - 如何识别文件
+
+- @ques 自己写一个 http 解析器
+
+  - 只有自己要的功能
+  - rust 解析字符串的 crate 有哪些
+
+- @ques main 直接使用本地文件... 引用 thread——pool
+
 ## 2020-08-05 09:56:51
+
+- @ques RefCell<T>/Rc<T>
+
+  - 这东西没有实际应用场景 根本就不知道是干什么的
 
 - @ques rc arc mutex weak ?
 
@@ -13,7 +29,6 @@
 * @ques rust life time
 
 * @ques rust const
-  ，
 
 ## 2020-07-27 09:59:36
 
