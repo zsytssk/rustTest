@@ -8,12 +8,13 @@ use std::str;
 use std::thread;
 
 fn handle_connection(mut stream: TcpStream) {
-    let mut buffer = [0; 512];
+    let mut buffer = [0; 1024];
     stream.read(&mut buffer).unwrap();
 
     let get = b"GET / HTTP/1.1\r\n";
-    println!("{:}", str::from_utf8(&buffer).unwrap());
+    println!("{}", str::from_utf8(&buffer).unwrap());
     let parser = Parser::new(str::from_utf8(&buffer).unwrap());
+    println!("{:?}", parser);
 
     if buffer.starts_with(get) {
         let contents = fs::read_to_string("hello.html").unwrap();
@@ -35,7 +36,7 @@ fn handle_connection(mut stream: TcpStream) {
 }
 
 fn main() -> std::io::Result<()> {
-    let listener = TcpListener::bind("127.0.0.1:8088")?;
+    let listener = TcpListener::bind("127.0.0.1:8089")?;
     for stream in listener.incoming() {
         handle_connection(stream.unwrap());
     }
