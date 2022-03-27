@@ -2,7 +2,11 @@
 
 - https://github.com/NullSense/Linda/tree/5a86c25f7c8dec9ad975c9569ce166e22f7a07ee
 
-## 2020-08-26 09:36:02
+## 2022-03-26 11:00:50
+
+- @ques async
+
+- @ques 线程
 
 - async local file server
 
@@ -13,6 +17,10 @@
 
   - 只有自己要的功能
   - rust 解析字符串的 crate 有哪些
+
+- @ques 常见语言需要记忆的地方 -> 将记忆和思考分开
+
+## 2020-08-26 09:36:02
 
 - @ques main 直接使用本地文件... 引用 thread——pool
 
