@@ -1,15 +1,56 @@
-## learn
+## String
 
-https://codeandbitters.com/lets-build-a-parser/
+```rs
+let mut owned_string: String = "hello ".to_owned();
+let borrowed_string: &str = "world";
 
-## TODO
+// 相加
+owned_string.push_str(borrowed_string);
+owned_string + borrowed_string;
 
-- local http file server
+```
 
-  - future
-  - multi thread
+## iterator
 
-- copy files
+- 遍历而不修改
 
-- @ques 能不能把 没有 lifetime 的转化成 rust， 这样就不需要垃圾回收了
-  - ...
+```rs
+let mut list: Vec<String> = args().collect();
+
+for item in &list {
+    println!("{}", item);
+}
+```
+
+## match
+
+```rs
+ match operator {
+    '+' => num1 + num2,
+    '-' => num1 - num2,
+    _ => 0.0,
+}
+```
+
+## Result
+
+```rs
+fn main() -> Result<(), String> {
+    if ... {
+        Err(String::from(""))
+    }
+    ok(())
+}
+```
+
+## Tuple
+
+```rs
+fn main() -> Result<(), String> {
+    let a = (1, 2);
+    assert!(a.0 == 1);
+    assert!(a.1 == 2);
+
+    assert!((1, 2) == (1, 2));
+}
+```
