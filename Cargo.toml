@@ -5,6 +5,6 @@ authors = ["张世阳 <zsytssk@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-nom = "6.1.2"
+image = "0.24.1"
 
 [workspace]
