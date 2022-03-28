@@ -2,6 +2,14 @@
 
 - https://github.com/NullSense/Linda/tree/5a86c25f7c8dec9ad975c9569ce166e22f7a07ee
 
+## 2022-03-28 09:51:28
+
+- @ques iterator 有哪些常用方法
+
+  - 如何遍历且不修改
+
+- @ques String, &str 有哪些常用方法
+
 ## 2022-03-26 11:00:50
 
 - @ques async
