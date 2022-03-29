@@ -54,3 +54,17 @@ fn main() -> Result<(), String> {
     assert!((1, 2) == (1, 2));
 }
 ```
+
+## loop
+
+```rs
+let mut i = 0;
+loop {
+    if i == 10 {
+        break;
+    }
+    let throw = uniform.sample(&mut rng);
+    println!("{}", throw);
+    i += 1;
+}
+```

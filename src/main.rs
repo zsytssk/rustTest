@@ -1,39 +1,32 @@
-mod args;
-use args::Args;
-use image::{
-    imageops::FilterType::Triangle, io::Reader, DynamicImage, GenericImageView, ImageFormat,
-};
+use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
 
 fn main() {
-    let a = Args::new();
-    let (image1, image1_format) = find_image_from_path(a.image1);
-    let (image2, image2_format) = find_image_from_path(a.image2);
+    let num: u8 = rand::thread_rng().gen_range(1..10);
 
-    println!("{}", (1, 2) == (1, 2))
-}
+    loop {
+        let mut guess = String::new();
+        println!("请输入1到10其中一个数字");
+        io::stdin().read_line(&mut guess).expect("无法读取");
+        println!("你读取的数字是:{}", &guess);
+        let guess_num = match guess.trim().parse::<u8>() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("你输入的不是一个数字, 请继续");
+                continue;
+            }
+        };
 
-fn find_image_from_path(path: String) -> (DynamicImage, ImageFormat) {
-    let image_reader = Reader::open(path).unwrap();
-    let image_format = image_reader.format().unwrap();
-    let image = image_reader.decode().unwrap();
-    (image, image_format)
-}
-
-fn get_smallest_dim(dim1: (u32, u32), dim2: (u32, u32)) -> (u32, u32) {
-    let pix1 = dim1.0 * dim1.1;
-    let pix2 = dim2.0 * dim2.1;
-
-    return if pix1 < pix2 { dim1 } else { dim2 };
-}
-
-fn standardize_size(img1: DynamicImage, img2: DynamicImage) -> (DynamicImage, DynamicImage) {
-    let (width, height) = get_smallest_dim(img1.dimensions(), img2.dimensions());
-
-    if img1.dimensions() != (width, height) {
-        img1.resize_exact(width, height, Triangle);
+        match guess_num.cmp(&num) {
+            Ordering::Less => println!("小了"),
+            Ordering::Greater => {
+                println!("大了");
+            }
+            Ordering::Equal => {
+                println!("猜中了");
+                break;
+            }
+        }
     }
-    if img2.dimensions() != (width, height) {
-        img2.resize_exact(width, height, Triangle);
-    }
-    (img1, img2)
 }

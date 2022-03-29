@@ -2,9 +2,13 @@
 
 - https://github.com/NullSense/Linda/tree/5a86c25f7c8dec9ad975c9569ce166e22f7a07ee
 
+https://rust-lang-nursery.github.io/rust-cookbook/algorithms/randomness.html#generate-random-numbers-with-given-distribution
+
 ## 2022-03-28 15:44:54
 
 难点是 ownership + lifetime
+
+- @todo rand::thread_rng().gen_range::<> -> 写好这里的类型
 
 ## 2022-03-28 09:51:28
 
