@@ -1,6 +1,17 @@
 fn main() {
-    let list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    for item in list {
-        println!("{}", item);
+    let s1 = String::from("hello world");
+    let n = first_world(&s1);
+
+    println!("{}", n);
+}
+
+fn first_world(s: &str) -> &str {
+    let bytes = s.as_bytes();
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
     }
+
+    return &s;
 }

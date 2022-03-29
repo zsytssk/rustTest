@@ -4,6 +4,8 @@
 
 https://rust-lang-nursery.github.io/rust-cookbook/algorithms/randomness.html#generate-random-numbers-with-given-distribution
 
+飞书
+
 ## 2022-03-28 15:44:54
 
 难点是 ownership + lifetime
@@ -15,6 +17,8 @@ https://rust-lang-nursery.github.io/rust-cookbook/algorithms/randomness.html#gen
 - @ques 如何写 unsafe
 
 ## 2022-03-28 09:51:28
+
+- @ques rust 的所有权规则
 
 - @ques iterator 有哪些常用方法
 
