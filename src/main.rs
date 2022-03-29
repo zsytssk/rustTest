@@ -1,9 +1,10 @@
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
+use std::ops::Range;
 
 fn main() {
-    let num: u8 = rand::thread_rng().gen_range(1..10);
+    let num = rand::thread_rng().gen_range::<u8, Range<u8>>(1..10);
 
     loop {
         let mut guess = String::new();
