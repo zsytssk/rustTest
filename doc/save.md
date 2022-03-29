@@ -58,13 +58,19 @@ fn main() -> Result<(), String> {
 ## loop
 
 ```rs
-let mut i = 0;
-loop {
-    if i == 10 {
-        break;
-    }
-    let throw = uniform.sample(&mut rng);
-    println!("{}", throw);
-    i += 1;
+fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("{}", result);
 }
 ```
+
+## while

@@ -10,6 +10,10 @@ https://rust-lang-nursery.github.io/rust-cookbook/algorithms/randomness.html#gen
 
 - @todo rand::thread_rng().gen_range::<> -> 写好这里的类型
 
+- @ques 能不能定义一个函数 `fn test<T>(i: T) -> T {i+ 5}`
+
+- @ques 如何写 unsafe
+
 ## 2022-03-28 09:51:28
 
 - @ques iterator 有哪些常用方法
