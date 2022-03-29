@@ -1,13 +1,6 @@
 fn main() {
-    let mut counter = 0;
-
-    let result = loop {
-        counter += 1;
-
-        if counter == 10 {
-            break counter * 2;
-        }
-    };
-
-    println!("{}", result);
+    let list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    for item in list {
+        println!("{}", item);
+    }
 }
