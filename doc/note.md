@@ -4,7 +4,31 @@
 
 https://rust-lang-nursery.github.io/rust-cookbook/algorithms/randomness.html#generate-random-numbers-with-given-distribution
 
-飞书
+## 2022-03-30 13:38:15
+
+- @ques borrow 的规则怎么有时候不太适用啊, 下面存在不可变, 也存在可变
+
+```rs
+
+fn main() {
+    let mut v = vec![1, 2, 3, 4];
+
+    let item = &v[1];
+    println!("{}", item);
+
+    v.push(5);
+    println!("{:?}", v);
+}
+```
+
+## 2022-03-30 10:50:34
+
+- @ques lib binary 的区别 -> 路径 + pub
+
+- @note use as -> 用问问题的形式来记忆
+
+- @note package > crate > module > file
+  - 自己总结一套
 
 ## 2022-03-28 15:44:54
 

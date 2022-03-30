@@ -1,17 +1,11 @@
-fn main() {
-    let s1 = String::from("hello world");
-    let n = first_world(&s1);
-
-    println!("{}", n);
+#[derive(Debug)]
+enum Num {
+    Int(i32),
+    Float(f64),
 }
 
-fn first_world(s: &str) -> &str {
-    let bytes = s.as_bytes();
-    for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' {
-            return &s[0..i];
-        }
-    }
+fn main() {
+    let mut v = vec![Num::Int(3), Num::Float(1.0)];
 
-    return &s;
+    println!("{:?}", v);
 }
