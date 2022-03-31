@@ -4,6 +4,10 @@
 
 https://rust-lang-nursery.github.io/rust-cookbook/algorithms/randomness.html#generate-random-numbers-with-given-distribution
 
+## 2022-03-30 16:41:27
+
+- @ques result 的常用方法, 常见的错误处理
+
 ## 2022-03-30 13:38:15
 
 - @ques borrow 的规则怎么有时候不太适用啊, 下面存在不可变, 也存在可变

@@ -55,13 +55,60 @@ fn main() {
 ## String
 
 ```rs
-let mut owned_string: String = "hello ".to_owned();
-let borrowed_string: &str = "world";
+fn main() {
+    let mut s = String::from("妈的");
 
-// 相加
-owned_string.push_str(borrowed_string);
-owned_string + borrowed_string;
+    for item in s.bytes() {
+        println!("{}", item);
+    }
+    for item in s.chars() {
+        println!("{}", item);
+    }
 
+    s.push_str(" world");
+    s.push('!');
+    println!("{}", s);
+
+    let s1 = String::from("hello");
+    let s2 = String::from(" world!");
+    let s3 = s1 + &s2;
+    println!("{}", s3);
+
+    let s4 = String::from("hello");
+    let s5 = String::from("world!");
+    let s6 = format!("{} {}", s4, s5);
+    println!("{}", s6);
+}
+
+```
+
+## hashmap
+
+```rs
+use std::collections::HashMap;
+
+fn main() {
+    let mut h = HashMap::new();
+    h.insert("user1", "zsy1");
+    h.insert("user2", "zsy2");
+
+    for (k, v) in &h {
+        println!("{} {}", k, v);
+    }
+
+    h.insert("user2", "zsy3");
+    h.entry("user1").or_insert("zsy4");
+
+    println!("{:?} {:?}", h, h.len());
+
+    let mut map = HashMap::new();
+    let text = "hello world wonderful world";
+    for word in text.split_whitespace() {
+        let count = map.entry(word).or_insert(0);
+        *count += 1;
+    }
+    println!("{:#?}", map);
+}
 ```
 
 ## iterator
@@ -157,6 +204,24 @@ fn main() {
     let s3 = &s[..];
 
     println!("{} {} {}", s1, s2, s3);
+}
+```
+
+## Result<T, Error>
+
+```rs
+use std::{fs::File, io::Error, io::Read};
+
+fn read_file(path: &str) -> Result<String, Error> {
+    let mut content = String::new();
+    File::open(path)?.read_to_string(&mut content)?;
+    Ok(content)
+}
+
+fn main() {
+    let content = read_file("Cargo.toml").expect("无法打开文件");
+
+    println!("{}", content);
 }
 ```
 

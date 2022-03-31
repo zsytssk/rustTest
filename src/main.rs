@@ -1,5 +1,5 @@
 fn main() {
-    let s = String::new();
+    let content = read_file("Cargo.toml").expect("无法打开文件");
 
-    println!("{}", s);
+    println!("{}", content);
 }
